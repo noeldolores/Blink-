@@ -1,2 +1,4 @@
 /// @description Increase Score
-global.tap_score += 1;
+if obj_control.game_over = false {
+	global.tap_score += 1;
+}
