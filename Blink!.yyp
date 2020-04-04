@@ -34,7 +34,15 @@
             "Key": "06128ce5-6071-4358-9c1e-0c6356b31d4b",
             "Value": {
                 "id": "0e17b6f0-3aa1-4527-9464-4da322149b51",
-                "resourcePath": "rooms\\room0\\room0.yy",
+                "resourcePath": "rooms\\rm_play\\rm_play.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "11c5eded-558e-4913-a7fc-11fed83f4492",
+            "Value": {
+                "id": "86746dc2-70c7-4270-a86c-7884e801168b",
+                "resourcePath": "rooms\\rm_start\\rm_start.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -111,6 +119,14 @@
             }
         },
         {
+            "Key": "7cacea73-0d4c-4938-a087-75a7f244702d",
+            "Value": {
+                "id": "88ff7c2b-4447-4342-8eb8-52171e9b80e8",
+                "resourcePath": "objects\\obj_control\\obj_control.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "7f630a75-a214-4a9b-9517-105d244e15b7",
             "Value": {
                 "id": "4f8bdd28-ad14-4806-b492-2bd650868fcd",
@@ -175,6 +191,14 @@
             }
         },
         {
+            "Key": "b0646001-f182-474d-9867-1572eece33a3",
+            "Value": {
+                "id": "e77057bf-242e-410f-ba2b-94b28ede2ac7",
+                "resourcePath": "sprites\\spr_mole\\spr_mole.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "b06646ec-0399-4723-9c51-1a42d8e09cd2",
             "Value": {
                 "id": "32d00854-b3a8-4407-9694-2aee9298c3fb",
@@ -228,6 +252,14 @@
                 "id": "00bab2c6-dbb1-4edb-b445-be77f52049f4",
                 "resourcePath": "options\\mac\\options_mac.yy",
                 "resourceType": "GMMacOptions"
+            }
+        },
+        {
+            "Key": "fd8249c2-08bf-43ae-80ee-0d4624ee1eca",
+            "Value": {
+                "id": "93894c9e-347a-47b5-b925-687196d8c4be",
+                "resourcePath": "objects\\obj_mole\\obj_mole.yy",
+                "resourceType": "GMObject"
             }
         }
     ],
