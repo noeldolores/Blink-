@@ -14,6 +14,9 @@ if room = rm_play {
 				if device_mouse_check_button_pressed(0, mb_left) {
 					if !position_meeting(device_mouse_x(0), device_mouse_y(0), obj_mole) {
 						round_timer = 0;
+						if !instance_exists(obj_death_marker) {	
+							instance_create_layer(device_mouse_x(0), device_mouse_y(0), "Instances", obj_death_marker);
+						}
 					}
 				}
 			}
@@ -37,6 +40,11 @@ if room = rm_play {
 							var spawn_y = irandom(ds_grid_height(global.right_grid)-1)*(24/global.grid_size);
 							instance_create_layer(spawn_x, spawn_y, "Instances", obj_mole);
 							global.spawn_side = "left";
+						}
+					}
+					if device_mouse_check_button_pressed(0, mb_left) {
+						if !position_meeting(device_mouse_x(0), device_mouse_y(0), obj_mole) {
+							instance_create_layer(device_mouse_x(0), device_mouse_y(0), "Instances", obj_death_marker);
 						}
 					}
 				} else {
@@ -68,6 +76,9 @@ if room = rm_play {
 				}
 				if device_mouse_check_button_pressed(0, mb_left) {
 					if !position_meeting(device_mouse_x(0), device_mouse_y(0), obj_mole) {
+						if !instance_exists(obj_death_marker) {	
+							instance_create_layer(device_mouse_x(0), device_mouse_y(0), "Instances", obj_death_marker);
+						}
 						game_over = true;
 					}
 				}
