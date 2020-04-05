@@ -6,7 +6,8 @@
     "children": [
         "e0b51e97-7909-4e0e-a4d3-a4bd46173dce",
         "06cb0dd7-17ab-4d01-8e19-e9cb692dcd99",
-        "0147d8f0-ed74-47a3-9d23-fdb29e7c2224"
+        "0147d8f0-ed74-47a3-9d23-fdb29e7c2224",
+        "7d91529f-67ea-4bb8-839f-fe658acc83df"
     ],
     "filterType": "GMSprite",
     "folderName": "Start Menu",

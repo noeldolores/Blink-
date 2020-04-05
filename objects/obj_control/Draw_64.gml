@@ -19,15 +19,15 @@ if room = rm_play {
 		draw_text(ui_width_middle, ui_height_middle, "Begin in: " + string(countdown_timer));
 	}
 	
-	if alarm[1] {
-		//draw_text(ui_width_middle, ui_height_middle - 8,  "Time Left");
-		//draw_text(ui_width_middle, ui_height_middle + 8,  round_timer);
-	}
 	if game_over = true {
 		draw_text(ui_width_middle, ui_height_middle - 32, "Game Over!");
 	}
 	if can_restart = true {
 		draw_text(ui_width_middle, ui_height_middle, "Double Tap Anywhere to Restart");
+	}		
+	if global.game_mode = 2 && alarm[3] {
+		draw_text(ui_width_middle, (ui_height_middle / 8) + 24, "Time: " + string(round_duration));
 	}
+	
 	draw_set_halign(fa_left);
 }
