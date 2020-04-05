@@ -25,7 +25,7 @@ if room = rm_play {
 	if can_restart = true {
 		draw_text(ui_width_middle, ui_height_middle, "Double Tap Anywhere to Restart");
 	}		
-	if global.game_mode = 2 && alarm[3] {
+	if global.game_mode = 2 && !alarm[0] {
 		draw_text(ui_width_middle, (ui_height_middle / 8) + 24, "Time: " + string(round_duration));
 	}
 	
