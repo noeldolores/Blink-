@@ -1,6 +1,6 @@
 /// @description Display Score and Timer
 
-display_set_gui_size(720,320);
+display_set_gui_size(1080,540);
 
 draw_set_color(c_red);
 
@@ -20,12 +20,14 @@ if room = rm_play {
 	}
 	
 	if alarm[1] {
-		draw_text(ui_width_middle, ui_height_middle - 8,  "Time Left");
-		draw_text(ui_width_middle, ui_height_middle + 8,  round_timer);
+		//draw_text(ui_width_middle, ui_height_middle - 8,  "Time Left");
+		//draw_text(ui_width_middle, ui_height_middle + 8,  round_timer);
 	}
-	
 	if game_over = true {
-		draw_text(ui_width_middle, ui_height_middle * 1.5, "Double Tap Anywhere to Restart");
+		draw_text(ui_width_middle, ui_height_middle - 32, "Game Over!");
+	}
+	if can_restart = true {
+		draw_text(ui_width_middle, ui_height_middle, "Double Tap Anywhere to Restart");
 	}
 	draw_set_halign(fa_left);
 }

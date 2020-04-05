@@ -4,10 +4,11 @@
 room_speed = 60;
 device_mouse_dbclick_enable(true);
 global.tap_score = 0;
+global.grid_size = 2;
 
 //Create game grids
-global.left_grid = ds_grid_create(2, 2);
-global.right_grid = ds_grid_create(2, 2);
+//global.left_grid = ds_grid_create(global.grid_size, global.grid_size);
+//global.right_grid = ds_grid_create(global.grid_size, global.grid_size);
 
 //Inits spawn side trigger
 global.spawn_side = 0;
@@ -28,3 +29,6 @@ round_timer = 10;
 
 //Game over
 game_over = false;
+can_restart = false;
+
+draw_set_font(fn_ui);
