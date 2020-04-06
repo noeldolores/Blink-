@@ -1,5 +1,4 @@
 /// @description Spawn and Timer
-
 if room = rm_play {
 	if !alarm[0] {
 		if countdown_timer > 0 {
@@ -7,99 +6,50 @@ if room = rm_play {
 		}
 	}
 	
-	switch (global.game_mode) {
-		//10 second timed, sudden death
-		case 1:
+	switch (global.game_mode) {		
+		case 1:		//10 second timed, sudden death
 			if countdown_timer <= 0 && !game_over {
-				if device_mouse_check_button_pressed(0, mb_left) {
-					if !position_meeting(device_mouse_x(0), device_mouse_y(0), obj_mole) {
-						round_timer = 0;
-						if !instance_exists(obj_death_marker) {	
-							instance_create_layer(device_mouse_x(0), device_mouse_y(0), "Instances", obj_death_marker);
-						}
-					}
-				}
-			}
-		//10 second timed
-		case 0:
-			if countdown_timer <= 0 && !game_over {
-				if !alarm[1] {
-					if round_timer > 0 {
-						alarm[1] = scr_seconds(1);	
-					}
-				}
+				scr_death_marker(true, 1);
+			}		
+		case 0:		//10 second timed
+			if countdown_timer <= 0 {
 				if round_timer > 0 {
-					if !instance_exists(obj_mole) {
-						if global.spawn_side = "left" {
-							var spawn_x = irandom(ds_grid_width(global.left_grid)-1)*(24/global.grid_size);
-							var spawn_y = irandom(ds_grid_height(global.left_grid)-1)*(24/global.grid_size);
-							instance_create_layer(spawn_x, spawn_y, "Instances", obj_mole);
-							global.spawn_side = "right";
-						} else {
-							var spawn_x = (irandom(ds_grid_width(global.right_grid)-1)*(24/global.grid_size)) + 30;
-							var spawn_y = irandom(ds_grid_height(global.right_grid)-1)*(24/global.grid_size);
-							instance_create_layer(spawn_x, spawn_y, "Instances", obj_mole);
-							global.spawn_side = "left";
-						}
+					if !alarm[1] {
+						alarm[1] = scr_seconds(1/60);	
 					}
-					if device_mouse_check_button_pressed(0, mb_left) {
-						if !position_meeting(device_mouse_x(0), device_mouse_y(0), obj_mole) {
-							instance_create_layer(device_mouse_x(0), device_mouse_y(0), "Instances", obj_death_marker);
-						}
-					}
+					scr_spawn_mole();
+					scr_death_marker(false, 5);
 				} else {
 					game_over = true;	
 				}
 			}
-		break;
-		
-		//No timer, sudden death
-		case 2: ;
+		break;		
+		case 2:		//No timer, sudden death
 			if countdown_timer <= 0 {
 				if !alarm[3] {
 					if round_duration >= 0 {
 						alarm[3] = scr_seconds(1);	
 					}
 				}
-				if !instance_exists(obj_mole) {
-					if global.spawn_side = "left" {
-						var spawn_x = irandom(ds_grid_width(global.left_grid)-1)*(24/global.grid_size);
-						var spawn_y = irandom(ds_grid_height(global.left_grid)-1)*(24/global.grid_size);
-						instance_create_layer(spawn_x, spawn_y, "Instances", obj_mole);
-						global.spawn_side = "right";
-					} else {
-						var spawn_x = (irandom(ds_grid_width(global.right_grid)-1)*(24/global.grid_size)) + 30;
-						var spawn_y = irandom(ds_grid_height(global.right_grid)-1)*(24/global.grid_size);
-						instance_create_layer(spawn_x, spawn_y, "Instances", obj_mole);
-						global.spawn_side = "left";
-					}
-				}
-				if device_mouse_check_button_pressed(0, mb_left) {
-					if !position_meeting(device_mouse_x(0), device_mouse_y(0), obj_mole) {
-						if !instance_exists(obj_death_marker) {	
-							instance_create_layer(device_mouse_x(0), device_mouse_y(0), "Instances", obj_death_marker);
-						}
-						game_over = true;
-					}
-				}
+				scr_spawn_mole();				
+				scr_death_marker(true, 1);
 			}
 		break;
-		
 	}	
-}
 
-if game_over = true {
-	if instance_exists(obj_mole) {
-		instance_destroy(obj_mole);
-	}
-	if can_restart = false {
-		if !alarm[2] {
-			alarm[2] = scr_seconds(1);	
+	if game_over = true {
+		if instance_exists(obj_mole) {
+			instance_destroy(obj_mole);
 		}
-	} else {		
-		if device_mouse_check_button_pressed(0, 2) {
-			room_goto(rm_start);
-			instance_destroy(self);
+		if can_restart = false {
+			if !alarm[2] {
+				alarm[2] = scr_seconds(1);	
+			}
+		} else {		
+			if device_mouse_check_button_pressed(0, 2) {
+				room_goto(rm_start);
+				instance_destroy(self);
+			}
 		}
 	}
 }

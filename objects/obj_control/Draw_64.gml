@@ -33,5 +33,5 @@ if room = rm_play {
 }
 
 draw_set_halign(fa_left);
-draw_text(0, 0, "v0.0.3")
+draw_text(0, 0, "v0.0.4")
 draw_set_halign(fa_left);
