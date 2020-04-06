@@ -87,6 +87,22 @@
             }
         },
         {
+            "Key": "1d08e54a-eabb-47cb-af73-9fc5a6a017f5",
+            "Value": {
+                "id": "870ee235-3740-49f0-bf93-83426d6bb012",
+                "resourcePath": "scripts\\scr_death_marker\\scr_death_marker.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "1fe50802-aee0-49b3-8205-1bb39fbe2802",
+            "Value": {
+                "id": "27b2700e-e6cc-464b-b445-2a88e96cead3",
+                "resourcePath": "scripts\\scr_spawn_mole\\scr_spawn_mole.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "218878ba-1615-4075-80dc-1da875eedae1",
             "Value": {
                 "id": "8984d74f-c04e-429e-a19e-f3b4737a88ee",
@@ -228,6 +244,14 @@
                 "id": "e20790bc-5b20-4260-9a86-0757bd78973d",
                 "resourcePath": "scripts\\scr_seconds\\scr_seconds.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "8de77f57-23a2-418d-9b41-92911a459f26",
+            "Value": {
+                "id": "25d150d8-7add-48bc-87a5-4bb285f4da45",
+                "resourcePath": "sprites\\spr_splash_screen\\spr_splash_screen.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -424,7 +448,9 @@
         }
     ],
     "script_order": [
-        "8896dfcb-5c0f-4741-86d6-4a29aa4786b1"
+        "8896dfcb-5c0f-4741-86d6-4a29aa4786b1",
+        "1fe50802-aee0-49b3-8205-1bb39fbe2802",
+        "1d08e54a-eabb-47cb-af73-9fc5a6a017f5"
     ],
     "tutorial": ""
 }
